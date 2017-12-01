@@ -1,9 +1,11 @@
 # Server settings
+---
 server:
-    port: 8009
-    address: 127.0.0.1
+  port: 8009
 # SPRING PROFILES
 spring:
+    profiles:
+        active: dev
     # HTTP ENCODING
     http:
         encoding.charset: UTF-8
@@ -11,10 +13,6 @@ spring:
         encoding.force: true
     # DATASOURCE
     datasource:
-#        driverClass: com.mysql.jdbc.Driver
-                       #        url: jdbc:mysql://127.0.0.1:3306/wcm?useUnicode=true&characterEncoding=utf-8&useSSL=false
-                       #        username: root
-                       #        password: root
         type: com.alibaba.druid.pool.DruidDataSource
         driverClass: com.mysql.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/wcm?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -32,6 +30,9 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         connection-properties: druid.stat.mergeSql:true;druid.stat.slowSqlMillis:5000
+
+
+
 
 
 

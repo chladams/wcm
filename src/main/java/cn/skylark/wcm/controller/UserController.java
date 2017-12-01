@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-//    Logger logger = LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
@@ -38,6 +38,9 @@ public class UserController {
 
     @RequestMapping("/get")
     public User list(Integer id) {
+        logger.info("测试日志");
+        logger.error("ERRO日志");
+        logger.debug("debug日志");
         return userService.getUser(id);
     }
 
@@ -49,7 +52,7 @@ public class UserController {
             @ApiImplicitParam(name="state",paramType="query",dataType="Integer"),
     })
     public String add(User user) {
-//        logger.info("测试日志");
+        logger.info("测试日志");
         return "Hello" + userService.addUser(user);
     }
 }
